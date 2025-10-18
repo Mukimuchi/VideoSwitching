@@ -41,3 +41,79 @@ body {
     cursor: pointer;
     margin: 0 5px;
 }
+
+/* 更新コントロールエリアの全体スタイル */
+#playback-contols {
+    width: 800px;
+    margin-bottom:10px;
+    background:#222;
+    padding: 5px 10px;
+    color: #eee;
+}
+
+.seek-bar-area {
+    margin-bottom: 5px;
+}
+
+.time-and-buttoms {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+#playPauseButton {
+    background: #555;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+/* --- シークバー（スライダー）のスタイル --- */
+#seekSlider {
+    width: 100%;
+    height: 8px; 
+    -webkit-appearance: none; /* デフォルトの外観をリセット (Chrome, Safari) */
+    appearance: none;
+    background: #555; /* 初期バーの背景色 */
+    cursor: pointer;
+    margin: 0;
+    
+    /* トラックとツマミのデフォルト位置を調整 */
+    padding: 0;
+}
+
+/* シークバーのトラック（再生されていない部分）のスタイル */
+#seekSlider::-webkit-slider-runnable-track {
+    height: 4px; /* トラックの細さ */
+    background: transparent; 
+    border-radius: 2px;
+}
+#seekSlider::-moz-range-track {
+    height: 4px;
+    background: transparent;
+    border-radius: 2px;
+}
+
+/* シークバーのツマミ（シークヘッド）のスタイル */
+#seekSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #f00; /* YouTubeっぽい赤色 */
+    border: 1px solid white;
+    border-radius: 50%;
+    margin-top: -4px; /* トラックの中央に配置 */
+}
+
+#seekSlider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background: #f00;
+    border: none;
+    border-radius: 50%;
+}
+
+/* スライダーの背景はJSで動的に更新することで、再生済みの赤色部分を表現する */
