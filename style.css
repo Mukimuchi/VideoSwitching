@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+#video-container {
+    position: relative; /* 子要素の配置基準 */
+    width: 800px;
+    height: 450px; /* 16:9比率を想定 */
+    border: 3px solid #333;
+    margin-bottom: 20px;
+}
+
+.camera-video {
+    position: absolute; /* すべて重ねて配置 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 映像をコンテナに合わせる */
+
+    /* 非表示設定: 透明度を0にし、クリックを透過させる */
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity 0.05s ease-out; /* 非常に短いトランジションで、視覚的な切替を滑らかに */
+}
+
+/* アクティブなカメラの表示設定 */
+.camera-video.active {
+    opacity: 1;
+    z-index: 10; /* 手前に表示 */
+    pointer-events: auto; /* クリック可能にする */
+}
+
+#controls button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 5px;
+}

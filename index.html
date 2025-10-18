@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>高速カメラ切替デモ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="video-container">
+        <video id="cam1" src="cam1.mp4" autoplay loop muted playsinline class="camera-video active"></video>
+        <video id="cam2" src="cam2.mp4" autoplay loop muted playsinline class="camera-video"></video>
+        <video id="cam3" src="cam3.mp4" autoplay loop muted playsinline class="camera-video"></video>
+    </div>
+
+    <div id="controls">
+        <button onclick="switchCamera('cam1')">カメラ 1</button>
+        <button onclick="switchCamera('cam2')">カメラ 2</button>
+        <button onclick="switchCamera('cam3')">カメラ 3</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
