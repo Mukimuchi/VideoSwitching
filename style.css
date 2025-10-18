@@ -43,7 +43,7 @@ body {
 }
 
 /* 更新コントロールエリアの全体スタイル */
-#playback-contols {
+#playback-controls {
     width: 800px;
     margin-bottom:10px;
     background:#222;

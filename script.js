@@ -37,7 +37,7 @@ function updatePlaybackState() {
     currentTimeDisplay.textContent = formatTime(activeVideo.currentTime);
 
     // 3.再生済み部分を赤く塗るためのCSS設定
-    const percent = (activeVideo.currentTime / activeVideo/duration) * 100;
+    const percent = (activeVideo.currentTime / activeVideo.duration) * 100;
     seekSlider.style.background = `linear-gradient(to right, #f00 ${percent}%, #555 ${percent}%)`;
 
     // 4. 再生/一時停止ボタンの表示を更新
@@ -78,10 +78,10 @@ playPauseButton.addEventListener('click', () => {
     const activeVideo = document.getElementById(currentCamId);
     if (activeVideo.paused) {
         // 再生開始時に、すべてのカメラの再生を再開(シームレスな切り替えのため)
-        document.querySelectiorAll('.camera-video').forEach(video => video.play());
+        document.querySelectorAll('.camera-video').forEach(video => video.play());
     } else {
         // 一時停止には、すべてのカメラを一時停止
-        document.querySelectiorAll('.camera-video').forEach(video => video.pause());
+        document.querySelectorAll('.camera-video').forEach(video => video.pause());
     }
     //ボタン表示を更新(updatePlaybackState()で処理される)
 });
